@@ -1,0 +1,19 @@
+<ion-view view-title="Dostupna vozila" ng-controller="DostupnaVozilaCtrl">
+  <ion-content delegate-handle="ptr-content" class="AppBackground">
+    <!-- <ion-header-bar align-title="left" class="bar-positive">
+      <button ng-click="dodajkola()">dodaj</button>
+     </ion-header-bar>  -->
+     <ion-refresher on-refresh="refreshVozila()">
+     </ion-refresher>
+    <ion-list>
+    <div class="list row">
+    	<div class="col">
+        <ion-item ng-repeat="vozilo in dostupnavozila track by $index" >
+          {{vozilo.vo_registracija}} - {{vozilo.vo_model}}
+        </ion-item>
+      </div>
+    </div>
+            
+    </ion-list>
+  </ion-content>
+</ion-view>

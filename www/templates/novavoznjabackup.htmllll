@@ -1,0 +1,72 @@
+<ion-view view-title="Nova vožnja">
+  <ion-content class="AppBackground">
+
+<ion-list padding="true">
+  <div class="list row item-icon-right">
+      <div class="col">
+        <label class="item item-input item-select">
+          <i class="icon ion-android-car padding-right"></i>
+      <div class="input-label">
+        Vozilo
+      </div>
+      <select ng-model="odabraniauto" ng-options="vozilo.vo_registracija for auto in vozilo">
+      </select>
+      </label>
+        <label class="item item-input">
+          <i class="icon ion-ios-calendar-outline padding-right"></i>
+        <span class="input-label">Datum</span>
+        <input type="date">
+      </label>
+       <label class="item item-input">
+        <i class="icon ion-calculator padding-right"></i>
+      <span class="input-label">Stanje (km)</span>
+      <input type="number">
+      </label>
+       <label class="item item-input">
+        <i class="icon ion-arrow-swap padding-right"></i>
+                <span class="input-label">Relacija</span>
+                <input type="text">
+          </label>
+           <label class="item item-input">
+            <i class="icon ion-clock padding-right"></i>
+               <span class="input-label">Odlazak</span>
+         <form>
+              <input type="time" name="usr_time">
+        </form>
+         </label>
+    </div>
+  </div>
+  </ion-list>      
+      <div class="row">
+      <div class="col text-center">
+      <a href="#" class="button gBtnS" ng-click="alertaj({{odabraniauto.vo_registracija}})">Započni vožnju</a>
+      <button class="button button-icon ion-compose" ng-click="alertaj('dkd')">puce maleno</button>
+      </div>
+      </div>
+<ion-list>
+<div class="list row item-icon-right">
+    <div class="col">
+    <label class="item item-input">
+      <i class="icon ion-clock padding-right"></i>
+             <span class="input-label">Dolazak</span>
+       <form>
+            <input class="sat" type="time" name="usr_time">
+      </form>
+       </label>
+     <label class="item item-input">
+      <i class="icon ion-calculator padding-right"></i>
+    <span class="input-label">Stanje (km)</span>
+    <input type="number">
+   </label>
+  </div>
+  </div>
+</ion-list>
+      
+      <div class="row">
+      <div class="col text-center">
+      <a href="#" class="button gBtnZ">Završi vožnju</a>
+      </div>
+      </div>
+      
+  </ion-content>
+</ion-view>

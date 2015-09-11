@@ -1,0 +1,32 @@
+<ion-view>
+  <ion-content>
+  <ion-header-bar>
+    <h1 class="title">Prijava</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Odustani</button>
+    </div>
+  </ion-header-bar>  
+ <div class="row">
+  <div class="col" id="SlikaLoading">
+     <img src="img/pocetna-loading.PNG" />
+  </div>
+ </div>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Korisničko ime</span>
+          <input type="text" ng-model="data.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Lozinka</span>
+          <input type="password" ng-model="data.password">
+        </label>
+        <label class="item">
+          <button class="button button-full button-dark" ng-click="login(data)">Prijava</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+
+

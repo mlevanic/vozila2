@@ -1,0 +1,80 @@
+<ion-view view-title="Nova vožnja">
+  <ion-content class="AppBackground">
+
+<ion-list padding="true">
+  <div class="list row item-icon-right">
+    <div class="col">
+      <label class="item item-input item-select">
+        <i class="icon ion-android-car padding-right"></i>
+    <div class="input-label">
+      Vozilo
+    </div>
+    <!--select>      
+      <option ng-repeat="vozilo in dostupnavozila">{{vozilo.vo_registracija}}</option>      
+    </select-->
+
+    <select ng-model="odabraniauto" ng-options="vozilo.vo_registracija for vozilo in dostupnavozila" ng-change="provjerikilometrazu(odabraniauto.vo_registracija)">
+    </select>
+  </label>
+  <label class="item item-input">
+      <i class="icon ion-ios-calendar-outline padding-right"></i>
+    <span class="input-label">Datum</span>
+    <input type="date" ng-model="aktivnavoznja.vdatumvoznje" >
+  </label>
+     <label class="item item-input">
+      <i class="icon ion-calculator padding-right"></i>
+    <span class="input-label">Stanje (km)</span>
+    <input type="number" ng-model="aktivnavoznja.vstanjekm"> 
+   </label>
+   <label class="item item-input">
+    <i class="icon ion-arrow-swap padding-right"></i>
+    <span class="input-label">Relacija</span>
+    <input type="text" ng-model="aktivnavoznja.relacija">              
+   </label>
+   <!--label class="item item-input">
+     <i class="icon ion-clock padding-right"></i>
+     <span class="input-label">Odlazak</span>     
+     <input type="time" ng-value="aktivnavoznja.vpocetnovrijeme">        
+   </label-->
+      <label class="item item-input">
+          <span class="input-label">Time</span>
+          <i class="icon ion-clock padding-right"></i>
+          <input type="time" ng-model="aktivnavoznja.vpocetnovrijeme" formatted-time>
+          <!--input type="time" ng-model="aktivnavoznja.vpocetnovrijeme" date:'shortTime'-->
+        </label>
+
+  </div>
+  </div>
+  </ion-list>
+      
+      <div class="row">
+      <div class="col text-center">
+      <a href="#" class="button gBtnS" ng-click="zapocnivoznju(aktivnavoznja,odabraniauto)">Započni vožnju</a>
+      </div>
+      </div>
+
+<ion-list>
+<div class="list row item-icon-right">
+    <div class="col">
+    <label class="item item-input">
+      <i class="icon ion-clock padding-right"></i>
+             <span class="input-label">Dolazak</span>       
+            <input class="sat" type="time" ng-model="aktivnavoznja.dolazak" formatted-time>      
+       </label>
+     <label class="item item-input">
+      <i class="icon ion-calculator padding-right"></i>
+    <span class="input-label">Stanje (km)</span>
+    <input type="number" ng-model="aktivnavoznja.stanjedolazak">
+   </label>
+  </div>
+  </div>
+</ion-list>
+      
+      <div class="row">
+      <div class="col text-center">
+      <a href="#" class="button gBtnZ" ng-click="zavrsivoznju(aktivnavoznja,odabraniauto)">Završi vožnju</a>
+      </div>
+      </div>
+      
+  </ion-content>
+</ion-view>
